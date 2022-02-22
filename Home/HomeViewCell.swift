@@ -9,6 +9,11 @@ import UIKit
 
 class HomeViewCell: UITableViewCell {
 
+    @IBOutlet weak var branchdes: UILabel!
+    @IBOutlet weak var accountdesc: UILabel!
+    @IBOutlet weak var processdesc: UILabel!
+    @IBOutlet weak var datedesc: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

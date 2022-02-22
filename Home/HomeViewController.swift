@@ -17,9 +17,14 @@ protocol HomeDisplayLogic where Self: UIViewController {
   func displayViewModel(_ viewModel: HomeModel.ViewModel)
 }
 
-final class HomeViewController: UIViewController {
+ final class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
   
-  private let mainView: HomeView
+    
+   
+   
+     
+   
+    private let mainView: HomeView
   private var interactor: HomeInteractable!
   private var router: HomeRouting!
   
@@ -31,14 +36,31 @@ final class HomeViewController: UIViewController {
     router = HomeRouter(viewController: self)
   }
   
-  override func viewDidLoad() {
+    
+    override func viewDidLoad() {
     super.viewDidLoad()
     //interactor.doSomething(item: 22)
+//      tableView.delegate = self
+//      tableView.dataSource = self
+//      
   }
   
   override func loadView() {
     view = mainView
   }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeViewCell else {
+            return UITableViewCell()
+         }
+//        let identifier = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for : indexPath)
+//        return identifier
+        return cell
+    }
   
   @available(*, unavailable)
   required init?(coder: NSCoder) {

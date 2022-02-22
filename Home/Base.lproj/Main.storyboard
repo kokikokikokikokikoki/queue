@@ -38,19 +38,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-iA-zmW">
-                                <rect key="frame" x="338" y="175" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Npp-SC-xBY"/>
-                                    <constraint firstAttribute="height" constant="60" id="pKf-Ej-sfY"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
-                                    <backgroundConfiguration key="background" image="map-find-search-svgrepo-com 1">
-                                        <color key="backgroundColor" red="0.74389284850000004" green="0.9006257057" blue="0.98824936149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-JM-xYW">
                                 <rect key="frame" x="270" y="175" width="60" height="60"/>
                                 <constraints>
@@ -64,15 +51,30 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-iA-zmW">
+                                <rect key="frame" x="338" y="175" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Npp-SC-xBY"/>
+                                    <constraint firstAttribute="height" constant="60" id="pKf-Ej-sfY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
+                                    <backgroundConfiguration key="background" image="map-find-search-svgrepo-com 1">
+                                        <color key="backgroundColor" red="0.74389284850000004" green="0.9006257057" blue="0.98824936149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DYF-7B-Sq8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05c-fd-7Ja"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="au4-j9-zxk" secondAttribute="trailing" id="0bd-YJ-9Me"/>
-                            <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="TOl-JM-xYW" secondAttribute="bottom" constant="20" id="3YV-kC-KTW"/>
-                            <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="PVR-iA-zmW" secondAttribute="bottom" constant="20" id="9sO-hi-p8c"/>
                             <constraint firstItem="cl0-BJ-C06" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BGT-Jm-hU5"/>
+                            <constraint firstItem="TOl-JM-xYW" firstAttribute="centerY" secondItem="PVR-iA-zmW" secondAttribute="centerY" id="If0-ij-z5q"/>
+                            <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="PVR-iA-zmW" secondAttribute="bottom" constant="20" id="IkC-1r-Etn"/>
+                            <constraint firstItem="TOl-JM-xYW" firstAttribute="bottom" secondItem="PVR-iA-zmW" secondAttribute="bottom" id="MQs-kv-HyV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PVR-iA-zmW" secondAttribute="trailing" constant="16" id="Msp-r9-19f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="au4-j9-zxk" secondAttribute="bottom" id="QWk-Uh-mRK"/>
                             <constraint firstItem="DYF-7B-Sq8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RIw-c7-WM9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tnn-Hj-B7s" secondAttribute="trailing" constant="16" id="aCh-zL-bpH"/>
@@ -80,12 +82,10 @@
                             <constraint firstItem="tnn-Hj-B7s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hj5-Rc-EUK"/>
                             <constraint firstItem="cl0-BJ-C06" firstAttribute="bottom" secondItem="tnn-Hj-B7s" secondAttribute="bottom" constant="8" id="l3V-UR-Znf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cl0-BJ-C06" secondAttribute="trailing" constant="16" id="nqU-IO-S47"/>
-                            <constraint firstItem="TOl-JM-xYW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="270" id="qvO-bF-6uZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PVR-iA-zmW" secondAttribute="trailing" constant="8" id="rM3-4d-r4L"/>
                             <constraint firstItem="au4-j9-zxk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uND-zv-4i9"/>
                             <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="255" id="vus-aP-sKa"/>
-                            <constraint firstItem="PVR-iA-zmW" firstAttribute="leading" secondItem="TOl-JM-xYW" secondAttribute="trailing" constant="8" id="xns-Y7-tKN"/>
                             <constraint firstItem="DYF-7B-Sq8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y9e-6o-Csj"/>
+                            <constraint firstItem="PVR-iA-zmW" firstAttribute="leading" secondItem="TOl-JM-xYW" secondAttribute="trailing" constant="8" symbolic="YES" id="zRs-2r-wR3"/>
                         </constraints>
                     </view>
                 </viewController>
