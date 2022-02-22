@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ququququ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5305323" translatesAutoresizingMaskIntoConstraints="NO" id="DYF-7B-Sq8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="Txf-v6-39E"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="au4-j9-zxk">
+                                <rect key="frame" x="0.0" y="255" width="414" height="607"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KK QUEUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnn-Hj-B7s">
+                                <rect key="frame" x="16" y="60" width="382" height="47.5"/>
+                                <fontDescription key="fontDescription" name="MalayalamSangamMN-Bold" family="Malayalam Sangam MN" pointSize="40"/>
+                                <color key="textColor" systemColor="tintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce Customer Waiting Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cl0-BJ-C06">
+                                <rect key="frame" x="16" y="94" width="382" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-iA-zmW">
+                                <rect key="frame" x="338" y="175" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Npp-SC-xBY"/>
+                                    <constraint firstAttribute="height" constant="60" id="pKf-Ej-sfY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
+                                    <backgroundConfiguration key="background" image="map-find-search-svgrepo-com 1">
+                                        <color key="backgroundColor" red="0.74389284850000004" green="0.9006257057" blue="0.98824936149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-JM-xYW">
+                                <rect key="frame" x="270" y="175" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iKR-PV-Ipe"/>
+                                    <constraint firstAttribute="width" constant="60" id="r66-3v-j7G"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="medium">
+                                    <backgroundConfiguration key="background" image="add-to-queue-svgrepo-com 1">
+                                        <color key="backgroundColor" red="0.74389284850000004" green="0.9006257057" blue="0.98824936149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DYF-7B-Sq8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="05c-fd-7Ja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="au4-j9-zxk" secondAttribute="trailing" id="0bd-YJ-9Me"/>
+                            <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="TOl-JM-xYW" secondAttribute="bottom" constant="20" id="3YV-kC-KTW"/>
+                            <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="PVR-iA-zmW" secondAttribute="bottom" constant="20" id="9sO-hi-p8c"/>
+                            <constraint firstItem="cl0-BJ-C06" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BGT-Jm-hU5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="au4-j9-zxk" secondAttribute="bottom" id="QWk-Uh-mRK"/>
+                            <constraint firstItem="DYF-7B-Sq8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RIw-c7-WM9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tnn-Hj-B7s" secondAttribute="trailing" constant="16" id="aCh-zL-bpH"/>
+                            <constraint firstItem="tnn-Hj-B7s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="fev-d6-a2H"/>
+                            <constraint firstItem="tnn-Hj-B7s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hj5-Rc-EUK"/>
+                            <constraint firstItem="cl0-BJ-C06" firstAttribute="bottom" secondItem="tnn-Hj-B7s" secondAttribute="bottom" constant="8" id="l3V-UR-Znf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cl0-BJ-C06" secondAttribute="trailing" constant="16" id="nqU-IO-S47"/>
+                            <constraint firstItem="TOl-JM-xYW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="270" id="qvO-bF-6uZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PVR-iA-zmW" secondAttribute="trailing" constant="8" id="rM3-4d-r4L"/>
+                            <constraint firstItem="au4-j9-zxk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uND-zv-4i9"/>
+                            <constraint firstItem="au4-j9-zxk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="255" id="vus-aP-sKa"/>
+                            <constraint firstItem="PVR-iA-zmW" firstAttribute="leading" secondItem="TOl-JM-xYW" secondAttribute="trailing" constant="8" id="xns-Y7-tKN"/>
+                            <constraint firstItem="DYF-7B-Sq8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y9e-6o-Csj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="82.366071428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="5305323" width="3000" height="2000"/>
+        <image name="add-to-queue-svgrepo-com 1" width="120" height="120"/>
+        <image name="map-find-search-svgrepo-com 1" width="120" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
