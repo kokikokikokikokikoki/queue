@@ -15,6 +15,8 @@ import UIKit
 protocol HomeDisplayLogic where Self: UIViewController {
     
     func displayViewModel(_ viewModel: HomeModel.Response)
+    func displayListModel(_ viewModel: [HomeModel.List])
+    
 }
 
 class HomeViewController: UIViewController {
@@ -23,6 +25,13 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
+    
+   @IBOutlet weak var branchBtn: UIButton!
+    @IBOutlet weak var bookBtn: UIButton!
+    
+    var list = [HomeModel.List]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,28 +39,60 @@ class HomeViewController: UIViewController {
         router = HomeRouter(viewController: self)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeViewCell")
         registerTableView()
-        
+        self.tableView.reloadData()
         interactor.doRequest()
+        interactor.doRequestList()
+        
     }
     
+    @IBAction func onQueueTap() {
+        guard let queue = storyboard?.instantiateViewController(withIdentifier: "BookingViewController")as? BookingViewController else {
+            return
+            
+        }
+        present(queue, animated: true)
+    }
+    
+    
+    @IBAction func onBranchTap() {
+        guard let branch = storyboard?.instantiateViewController(withIdentifier: "SecondViewController")as? SecondViewController else{
+        
+            return
+        }
+        present(branch, animated: true)
+        
+    }
     private func registerTableView() {
         let cellNib = UINib(nibName: "HomeViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "HomeViewCell")
     }
 }
 
+
+
+
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return list.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell", for: indexPath) as? HomeViewCell else {
             return UITableViewCell()
         }
+       // cell.branchdes.text = HomeModel[indexPath.row].account
+        cell.branchdes.text = list[indexPath.row].branch
+        cell.accountdesc.text = list[indexPath.row].account
+        cell.processdesc.text = list[indexPath.row].process
+        cell.datedesc.text = list[indexPath.row].date
+        
         return cell
     }
 }
+
+
 
 // MARK: - HomeDisplayLogic
 extension HomeViewController: HomeDisplayLogic {
@@ -59,8 +100,21 @@ extension HomeViewController: HomeDisplayLogic {
     func displayViewModel(_ viewModel: HomeModel.Response) {
         DispatchQueue.main.async {
             self.nameLabel.text = viewModel.name
+        self.subLabel.text =    viewModel.sub
+        
+        
+        
         }
     }
+    func displayListModel(_ viewModel: [HomeModel.List]){
+        DispatchQueue.main.async {
+         
+            self.list = viewModel
+            self.tableView.reloadData()
+            
+        }
+    }
+    
 }
 
 

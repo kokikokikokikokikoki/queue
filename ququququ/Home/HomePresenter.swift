@@ -14,6 +14,7 @@ import Foundation
 
 protocol HomePresentationLogic {
     func presentResponse(viewModel: HomeModel.Response)
+    func listResponse(viewModel: [HomeModel.List])
 }
 
 final class HomePresenter {
@@ -29,5 +30,10 @@ final class HomePresenter {
 extension HomePresenter: HomePresentationLogic {
     func presentResponse(viewModel: HomeModel.Response) {
         viewController?.displayViewModel(viewModel)
+
     }
+    func listResponse(viewModel : [HomeModel.List]){
+        viewController?.displayListModel(viewModel)
+    }
+    
 }

@@ -17,6 +17,8 @@ typealias HomeInteractable = HomeBusinessLogic
 protocol HomeBusinessLogic {
   
   func doRequest()
+  func doRequestList()
+    
 }
 final class HomeInteractor: HomeBusinessLogic {
   
@@ -43,4 +45,19 @@ extension HomeInteractor {
 
       task.resume()
   }
+    
+    func doRequestList() {
+        let url = URL(string: "http://localhost:8882/queuelist")!
+
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            let model = try! jsonDecoder.decode([HomeModel.List].self, from: data!)
+            
+            self.presenter.listResponse(viewModel: model)
+        })
+
+        task.resume()
+    }
+
+    
 }

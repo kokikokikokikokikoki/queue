@@ -11,11 +11,22 @@
 //
 import UIKit
 import Foundation
-struct HomeModel {
+struct HomeModel : Codable{
   
-    struct Response: Decodable {
+    struct Response: Codable {
         var id: Int
         var name: String
+       var sub: String
+        var t: Int
     }
+    
+    struct List : Codable{
+        var account: String
+        var branch: String
+        var process: String
+        var date: String?
+        
+    }
+    
     
 }

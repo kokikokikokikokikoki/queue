@@ -5,4 +5,79 @@
       status: 200
       headers:
          content-type: application/json
-      body: '{"id": 1, "name": "Koki Queue"}'
+      body: '{
+   "id":1,
+   "name":"Koki Queue",
+   "t":2,
+   "sub":"Reduce Customer Waiting Time"
+}'
+
+-  request:
+      method: GET
+      url: /queuelist
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      body: '[{
+   "account":"Open mutual fund account",
+   "branch":"CIMB BANK: Bangbon Branch",
+   "process":"Waiting",
+   "date":"12:45PM"},
+{
+   "account":"Booking Bond",
+   "branch":"CIMB BANK: Mall Bangkae Branch",
+   "process":"Waiting",
+   "date":"14:45PM" },
+{
+"account":"UNIQ Bond",
+   "branch":"CIMB BANK: Central Plaza Rama 2",
+   "process":"Waiting",
+   "date":"16:45PM" },
+   {
+   "account":"Home loan",
+   "branch":"CIMB BANK: Bangbon Branch",
+   "process":"Waiting",
+   "date":"12:45PM" },
+   {
+   "account":"House Loan",
+   "branch":"CIMB BANK: Central Pinklao",
+   "process":"Waiting",
+   "date":"11:45AM" },
+   {
+   "account":"Personal Account",
+   "branch":"CIMB BANK: The Mall Bang Kapi Branch",
+   "process":"Waiting",
+   "date":"12:45PM" },
+   {
+   "account":"Open mutual fund account",
+   "branch":"CIMB BANK: Central Plaza Bangna Branch",
+   "process":"Waiting",
+   "date":"12:45PM" },
+    {
+   "account":"Open mutual fund account",
+   "branch":"CIMB BANK: Central Plaza Bangna Branch",
+   "process":"Waiting",
+   "date":"12:45PM" },
+    {
+   "account":"Open mutual fund account",
+   "branch":"CIMB BANK: Central Plaza Bangna Branch",
+   "process":"Waiting",
+   "date":"12:45PM" },
+   {
+      "account":"Open mutual fund account",
+   "branch":"CIMB BANK: Silom Complex Branch",
+   "process":"Waiting",
+   "date":"13:45PM" 
+  
+
+
+   
+
+}]'
+
+
+          
+          
+          
+          
