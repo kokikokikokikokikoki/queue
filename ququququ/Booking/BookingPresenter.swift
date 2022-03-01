@@ -43,9 +43,6 @@ extension BookingPresenter: BookingPresentationLogic {
 private extension BookingPresenter {
   
   func presentDoSomething(_ newItem: Int, _ isItem: Bool) {
-    
-    //prepare data for display and send it further
-    
-    viewController?.displayViewModel(.doSomething(viewModelData: NSObject()))
+      viewController?.displaySomething()
   }
 }

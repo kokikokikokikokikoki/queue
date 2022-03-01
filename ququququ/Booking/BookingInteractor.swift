@@ -12,53 +12,50 @@
 
 import Foundation
 
-typealias BookingInteractable = BookingBusinessLogic & BookingDataStore
 
 protocol BookingBusinessLogic {
-  
-  func doRequest(_ request: BookingModel.Request)
+    
+    func doRequest(_ request: BookingModel.Request)
 }
 
-protocol BookingDataStore {
-  var dataSource: BookingModel.DataSource { get }
-}
-
-final class BookingInteractor: BookingDataStore {
-  
-  var dataSource: BookingModel.DataSource
-  
-  private var presenter: BookingPresentationLogic
-  
+class BookingInteractor {
+    
+    private var presenter: BookingPresentationLogic
+    
+    init(viewController: BookingDisplayLogic?) {
+        self.presenter = BookingPresenter(viewController: viewController)
+    }
+    
 }
 
 
 // MARK: - BookingBusinessLogic
 extension BookingInteractor: BookingBusinessLogic {
-  
-  func doRequest(_ request: BookingModel.Request) {
-    DispatchQueue.global(qos: .userInitiated).async {
-      
-      switch request {
-        
-      case .doSomething(let item):
-        self.doSomething(item)
-      }
+    
+    func doRequest(_ request: BookingModel.Request) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            switch request {
+                
+            case .doSomething(let item):
+                self.doSomething(item)
+            }
+        }
     }
-  }
 }
 
 
 // MARK: - Private Zone
 private extension BookingInteractor {
-  
-  func doSomething(_ item: Int) {
     
-    //construct the Service right before using it
-    //let serviceX = factory.makeXService()
-    
-    // get new data async or sync
-    //let newData = serviceX.getNewData()
-    
-    presenter.presentResponse(.doSomething(newItem: item + 1, isItem: true))
-  }
+    func doSomething(_ item: Int) {
+        
+        //construct the Service right before using it
+        //let serviceX = factory.makeXService()
+        
+        // get new data async or sync
+        //let newData = serviceX.getNewData()
+        
+        presenter.presentResponse(.doSomething(newItem: item + 1, isItem: true))
+    }
 }

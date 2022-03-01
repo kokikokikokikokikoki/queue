@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     
-   @IBOutlet weak var branchBtn: UIButton!
+    @IBOutlet weak var branchBtn: UIButton!
     @IBOutlet weak var bookBtn: UIButton!
     
     var list = [HomeModel.List]()
@@ -47,18 +47,31 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+    
     @IBAction func onQueueTap() {
         guard let queue = storyboard?.instantiateViewController(withIdentifier: "BookingViewController")as? BookingViewController else {
             return
             
         }
         present(queue, animated: true)
+        //        self.navigationController?.pushViewController(queue, animated: true)
     }
     
     
     @IBAction func onBranchTap() {
         guard let branch = storyboard?.instantiateViewController(withIdentifier: "SecondViewController")as? SecondViewController else{
-        
+            
             return
         }
         present(branch, animated: true)
@@ -82,7 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeViewCell", for: indexPath) as? HomeViewCell else {
             return UITableViewCell()
         }
-       // cell.branchdes.text = HomeModel[indexPath.row].account
+        // cell.branchdes.text = HomeModel[indexPath.row].account
         cell.branchdes.text = list[indexPath.row].branch
         cell.accountdesc.text = list[indexPath.row].account
         cell.processdesc.text = list[indexPath.row].process
@@ -100,18 +113,13 @@ extension HomeViewController: HomeDisplayLogic {
     func displayViewModel(_ viewModel: HomeModel.Response) {
         DispatchQueue.main.async {
             self.nameLabel.text = viewModel.name
-        self.subLabel.text =    viewModel.sub
-        
-        
-        
+            self.subLabel.text =    viewModel.sub
         }
     }
     func displayListModel(_ viewModel: [HomeModel.List]){
         DispatchQueue.main.async {
-         
             self.list = viewModel
             self.tableView.reloadData()
-            
         }
     }
     
