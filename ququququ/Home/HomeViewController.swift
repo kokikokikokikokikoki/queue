@@ -42,8 +42,8 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "HomeViewCell", bundle: nil), forCellReuseIdentifier: "HomeViewCell")
         registerTableView()
         self.tableView.reloadData()
-        interactor.doRequest()
-        interactor.doRequestList()
+        interactor.doTitleRequest()
+        interactor.doQueueList()
         
     }
     
@@ -65,16 +65,17 @@ class HomeViewController: UIViewController {
             
         }
         present(queue, animated: true)
-        //        self.navigationController?.pushViewController(queue, animated: true)
+              self.navigationController?.pushViewController(queue, animated: true)
     }
     
     
     @IBAction func onBranchTap() {
-        guard let branch = storyboard?.instantiateViewController(withIdentifier: "SecondViewController")as? SecondViewController else{
+        guard let branch = storyboard?.instantiateViewController(withIdentifier: "QueueViewController")as? QueueViewController else{
             
             return
         }
-        present(branch, animated: true)
+        self.navigationController!.pushViewController(branch, animated: true)
+        //present(branch, animated: true)
         
     }
     private func registerTableView() {

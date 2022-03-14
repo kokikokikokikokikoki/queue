@@ -14,6 +14,15 @@
 		202E639227CDF55000508349 /* BookingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638D27CDF55000508349 /* BookingInteractor.swift */; };
 		202E639327CDF55000508349 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638E27CDF55000508349 /* BookingView.swift */; };
 		202E639427CDF55000508349 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638F27CDF55000508349 /* BookingModel.swift */; };
+		202E639B27CE9F7C00508349 /* QueuePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E639527CE9F7C00508349 /* QueuePresenter.swift */; };
+		202E639C27CE9F7C00508349 /* QueueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E639627CE9F7C00508349 /* QueueRouter.swift */; };
+		202E639D27CE9F7C00508349 /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E639727CE9F7C00508349 /* QueueViewController.swift */; };
+		202E639E27CE9F7C00508349 /* QueueInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E639827CE9F7C00508349 /* QueueInteractor.swift */; };
+		202E639F27CE9F7C00508349 /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E639927CE9F7C00508349 /* QueueView.swift */; };
+		202E63A027CE9F7C00508349 /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E639A27CE9F7C00508349 /* QueueModel.swift */; };
+		202E63A427CF400D00508349 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E63A227CF400D00508349 /* CollectionTableViewCell.swift */; };
+		202E63A727CF48C800508349 /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E63A627CF48C800508349 /* TileCollectionViewCell.swift */; };
+		202E63A927CF763E00508349 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E63A827CF763E00508349 /* CollectionViewCell.swift */; };
 		2046797C27C372790075443D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2046797A27C372790075443D /* Main.storyboard */; };
 		2046797E27C372810075443D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2046797D27C372810075443D /* Assets.xcassets */; };
 		2046798127C372810075443D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2046797F27C372810075443D /* LaunchScreen.storyboard */; };
@@ -57,6 +66,15 @@
 		202E638D27CDF55000508349 /* BookingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInteractor.swift; sourceTree = "<group>"; };
 		202E638E27CDF55000508349 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		202E638F27CDF55000508349 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
+		202E639527CE9F7C00508349 /* QueuePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuePresenter.swift; sourceTree = "<group>"; };
+		202E639627CE9F7C00508349 /* QueueRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueRouter.swift; sourceTree = "<group>"; };
+		202E639727CE9F7C00508349 /* QueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
+		202E639827CE9F7C00508349 /* QueueInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueInteractor.swift; sourceTree = "<group>"; };
+		202E639927CE9F7C00508349 /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
+		202E639A27CE9F7C00508349 /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
+		202E63A227CF400D00508349 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		202E63A627CF48C800508349 /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
+		202E63A827CF763E00508349 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2046797127C372790075443D /* ququququ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ququququ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2046797B27C372790075443D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2046797D27C372810075443D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +135,22 @@
 			path = Booking;
 			sourceTree = "<group>";
 		};
+		202E63A127CE9F8B00508349 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				202E639527CE9F7C00508349 /* QueuePresenter.swift */,
+				202E639627CE9F7C00508349 /* QueueRouter.swift */,
+				202E639727CE9F7C00508349 /* QueueViewController.swift */,
+				202E639827CE9F7C00508349 /* QueueInteractor.swift */,
+				202E639927CE9F7C00508349 /* QueueView.swift */,
+				202E639A27CE9F7C00508349 /* QueueModel.swift */,
+				202E63A227CF400D00508349 /* CollectionTableViewCell.swift */,
+				202E63A627CF48C800508349 /* TileCollectionViewCell.swift */,
+				202E63A827CF763E00508349 /* CollectionViewCell.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
 		2046796827C372790075443D = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +174,7 @@
 		2046797327C372790075443D /* ququququ */ = {
 			isa = PBXGroup;
 			children = (
+				202E63A127CE9F8B00508349 /* Queue */,
 				202E638A27CDF50100508349 /* Booking */,
 				204679BB27C4D0770075443D /* AppDelegate.swift */,
 				12C2505427C4EA50005C019F /* SceneDelegate.swift */,
@@ -317,16 +352,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202E639E27CE9F7C00508349 /* QueueInteractor.swift in Sources */,
+				202E639D27CE9F7C00508349 /* QueueViewController.swift in Sources */,
+				202E63A427CF400D00508349 /* CollectionTableViewCell.swift in Sources */,
 				202E639227CDF55000508349 /* BookingInteractor.swift in Sources */,
 				204679AF27C372A90075443D /* HomeModel.swift in Sources */,
+				202E63A927CF763E00508349 /* CollectionViewCell.swift in Sources */,
 				204679AA27C372A90075443D /* HomePresenter.swift in Sources */,
 				12C2505527C4EA50005C019F /* SceneDelegate.swift in Sources */,
+				202E639C27CE9F7C00508349 /* QueueRouter.swift in Sources */,
 				204679BC27C4D0770075443D /* AppDelegate.swift in Sources */,
 				202E639127CDF55000508349 /* BookingRouter.swift in Sources */,
 				204679AB27C372A90075443D /* HomeRouter.swift in Sources */,
 				202E639427CDF55000508349 /* BookingModel.swift in Sources */,
+				202E63A727CF48C800508349 /* TileCollectionViewCell.swift in Sources */,
 				204679AE27C372A90075443D /* HomeView.swift in Sources */,
+				202E639B27CE9F7C00508349 /* QueuePresenter.swift in Sources */,
+				202E639F27CE9F7C00508349 /* QueueView.swift in Sources */,
 				204679B727C482FE0075443D /* HomeViewCell.swift in Sources */,
+				202E63A027CE9F7C00508349 /* QueueModel.swift in Sources */,
 				202E639327CDF55000508349 /* BookingView.swift in Sources */,
 				202E638927CCA94A00508349 /* BookingViewController.swift in Sources */,
 				204679AC27C372A90075443D /* HomeViewController.swift in Sources */,
