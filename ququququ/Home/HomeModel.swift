@@ -21,9 +21,9 @@ struct HomeModel : Codable{
     }
     
     struct List : Codable{
-        var account: String
-        var branch: String
-        var process: String
+        var account: String?
+        var branch: String?
+        var process: String?
         var date: String?
         
     }

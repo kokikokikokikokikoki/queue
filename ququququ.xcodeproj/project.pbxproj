@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12ADDE1A27DF386E001DD75F /* QueueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ADDE1927DF386E001DD75F /* QueueStoryboard.storyboard */; };
+		12ADDE1C27DF3F91001DD75F /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADDE1B27DF3F91001DD75F /* ColorUtils.swift */; };
+		12ADDE1F27DF4109001DD75F /* LabelDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADDE1E27DF4109001DD75F /* LabelDesignable.swift */; };
 		12C2505527C4EA50005C019F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2505427C4EA50005C019F /* SceneDelegate.swift */; };
 		202E638927CCA94A00508349 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638827CCA94A00508349 /* BookingViewController.swift */; };
 		202E639027CDF55000508349 /* BookingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638B27CDF55000508349 /* BookingPresenter.swift */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		12ADDE1927DF386E001DD75F /* QueueStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QueueStoryboard.storyboard; sourceTree = "<group>"; };
+		12ADDE1B27DF3F91001DD75F /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		12ADDE1E27DF4109001DD75F /* LabelDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDesignable.swift; sourceTree = "<group>"; };
 		12C2505427C4EA50005C019F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		202E638827CCA94A00508349 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		202E638B27CDF55000508349 /* BookingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPresenter.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12ADDE1D27DF40EF001DD75F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				12ADDE1B27DF3F91001DD75F /* ColorUtils.swift */,
+				12ADDE1E27DF4109001DD75F /* LabelDesignable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		202E638A27CDF50100508349 /* Booking */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +190,11 @@
 		2046797327C372790075443D /* ququququ */ = {
 			isa = PBXGroup;
 			children = (
-				202E63A127CE9F8B00508349 /* Queue */,
-				202E638A27CDF50100508349 /* Booking */,
+				12ADDE1D27DF40EF001DD75F /* Utils */,
 				204679BB27C4D0770075443D /* AppDelegate.swift */,
 				12C2505427C4EA50005C019F /* SceneDelegate.swift */,
+				202E63A127CE9F8B00508349 /* Queue */,
+				202E638A27CDF50100508349 /* Booking */,
 				204679B427C482C50075443D /* Home */,
 				2046798227C372810075443D /* Info.plist */,
 			);
@@ -369,12 +383,14 @@
 				202E639127CDF55000508349 /* BookingRouter.swift in Sources */,
 				204679AB27C372A90075443D /* HomeRouter.swift in Sources */,
 				202E639427CDF55000508349 /* BookingModel.swift in Sources */,
+				12ADDE1C27DF3F91001DD75F /* ColorUtils.swift in Sources */,
 				202E63A727CF48C800508349 /* TileCollectionViewCell.swift in Sources */,
 				204679AE27C372A90075443D /* HomeView.swift in Sources */,
 				202E639B27CE9F7C00508349 /* QueuePresenter.swift in Sources */,
 				202E639F27CE9F7C00508349 /* QueueView.swift in Sources */,
 				204679B727C482FE0075443D /* HomeViewCell.swift in Sources */,
 				202E63A027CE9F7C00508349 /* QueueModel.swift in Sources */,
+				12ADDE1F27DF4109001DD75F /* LabelDesignable.swift in Sources */,
 				202E639327CDF55000508349 /* BookingView.swift in Sources */,
 				202E638927CCA94A00508349 /* BookingViewController.swift in Sources */,
 				204679AC27C372A90075443D /* HomeViewController.swift in Sources */,
@@ -566,6 +582,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +610,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

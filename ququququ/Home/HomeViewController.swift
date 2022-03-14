@@ -102,7 +102,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.accountdesc.text = list[indexPath.row].account
         cell.processdesc.text = list[indexPath.row].process
         cell.datedesc.text = list[indexPath.row].date
-        
+        cell.setupProcessStatus(status: list[indexPath.row].process ?? "")
         return cell
     }
 }
