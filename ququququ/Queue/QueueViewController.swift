@@ -13,145 +13,55 @@
 import UIKit
 
 protocol QueueDisplayLogic where Self: UIViewController {
-  
-  func displaySomething()
+    
+    func displaySomething()
 }
 
-class QueueViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+class QueueViewController: UIViewController {
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var branchField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    private var interactor: QueueBusinessLogic!
+    private var router: QueueRouting!
+    
+    let branches = ["Bangbon Branch", "The Mall Bang Kapi Branch", "The Mall Bang Khae Branch", "Central Plaza Rama 2", "Central Pinklao Branch", "Central Plaza Bangna Branch", "Silom Complex Branch", "Bangrak Branch", "Central Ladphao Branch", "Bangkhen Branch", "Central Plaza Grand Rama 9 Branch", "Fashion Island Branch", "Central Eastville Branch"]
+    var pickerViewBranch = UIPickerView()
+    
+    let datePick = UIDatePicker(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 300))
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor = QueueInteractor(viewController: self)
+        router = QueueRouter(viewController: self)
+        pickerViewBranch.delegate = self
+        pickerViewBranch.dataSource = self
+        branchField.inputView = pickerViewBranch
+        datePicker.semanticContentAttribute = .forceRightToLeft
+        datePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
     }
     
+}
+
+extension QueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return branches.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return branches[row]
     }
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        branchField.text = branches[row]
-//        branchField.resignFirstResponder()
-//    }
-    
-    
-    
-     @IBOutlet weak var segmentedControl: UISegmentedControl!
-     
-     
-     @IBOutlet weak var nameField: UITextField!
-     
-     @IBOutlet weak var tableView: UITableView!
-     
-     @IBOutlet weak var datePicker: UITextField!
-   
-     @IBOutlet weak var branchField: UITextField!
-     private var interactor: QueueBusinessLogic!
-  private var router: QueueRouting!
-
-     let branches = ["Bangbon Branch", "The Mall Bang Kapi Branch", "The Mall Bang Khae Branch", "Central Plaza Rama 2", "Central Pinklao Branch", "Central Plaza Bangna Branch", "Silom Complex Branch", "Bangrak Branch", "Central Ladphao Branch", "Bangkhen Branch", "Central Plaza Grand Rama 9 Branch", "Fashion Island Branch", "Central Eastville Branch"]
-     var pickerViewBranch = UIPickerView()
-     
-     func createDatePicker(){
-         //tools
-         let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-         let datePick = UIDatePicker()
-         datePick.datePickerMode = .date
-         datePicker.inputView = datePick
-         
-         let doneBtn = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneBtnClick))
-         
-         toolbar.setItems([doneBtn], animated: false)
-         datePicker.inputAccessoryView = toolbar
-         
-         
-     }
-     
-     
-     @objc
-     func doneBtnClick(){
-         let formatter = DateFormatter()
-         formatter.timeStyle = .short
-         self.view.endEditing(true)
-         
-     }
-    override func viewDidLoad() {
-      super.viewDidLoad()
-        interactor = QueueInteractor(viewController: self)
-        router = QueueRouter(viewController: self)
-        pickerViewBranch.delegate = self
-        pickerViewBranch.dataSource = self
-        branchField.inputView = pickerViewBranch
-        
-        createDatePicker()
-        
-        
-        
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        branchField.text = branches[row]
+        branchField.resignFirstResponder()
     }
-     
-    
- 
-     
-     
-
-//     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//         return 10
-//     }
-//
-//     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//       guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell
-//         else{
-//             fatalError()
-//         }
-//
-//
-//         return cell
-//     }
-     
-     
-    
-     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
 }
-
-
 
 
 // MARK: - QueueDisplayLogic
 extension QueueViewController: QueueDisplayLogic {
-  
+    
     func displaySomething() {
         
     }
-    
-//  func displayViewModel(_ viewModel: QueueModel.ViewModel) {
-//    DispatchQueue.main.async {
-//      switch viewModel {
-//        
-//      case .doSomething(let viewModel):
-//        self.displayDoSomething(viewModel)
-//      }
-//    }
-//  }
 }
-
-
-// MARK: - QueueViewDelegate
-//extension QueueViewController: QueueViewDelegate {
-//  
-//  func sendDataBackToParent(_ data: Data) {
-//    //usually this delegate takes care of users actions and requests through UI
-//    
-//    //do something with the data or message send back from mainView
-//  }
-//}
-
-
-// MARK: - Private Zone
-//private extension QueueViewController {
-//
-//  func displayDoSomething(_ viewModel: NSObject) {
-//    print("Use the mainView to present the viewModel")
-//    //example of using router
-//    router.routeTo(.xScene(xData: 22))
-//  }
-//}

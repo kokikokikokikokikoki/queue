@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12ADDE1A27DF386E001DD75F /* QueueStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ADDE1927DF386E001DD75F /* QueueStoryboard.storyboard */; };
 		12C2505527C4EA50005C019F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2505427C4EA50005C019F /* SceneDelegate.swift */; };
 		202E638927CCA94A00508349 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638827CCA94A00508349 /* BookingViewController.swift */; };
 		202E639027CDF55000508349 /* BookingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E638B27CDF55000508349 /* BookingPresenter.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12ADDE1927DF386E001DD75F /* QueueStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QueueStoryboard.storyboard; sourceTree = "<group>"; };
 		12C2505427C4EA50005C019F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		202E638827CCA94A00508349 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		202E638B27CDF55000508349 /* BookingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPresenter.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				202E63A227CF400D00508349 /* CollectionTableViewCell.swift */,
 				202E63A627CF48C800508349 /* TileCollectionViewCell.swift */,
 				202E63A827CF763E00508349 /* CollectionViewCell.swift */,
+				12ADDE1927DF386E001DD75F /* QueueStoryboard.storyboard */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12ADDE1A27DF386E001DD75F /* QueueStoryboard.storyboard in Resources */,
 				2046798127C372810075443D /* LaunchScreen.storyboard in Resources */,
 				204679B827C482FE0075443D /* HomeViewCell.xib in Resources */,
 				2046797E27C372810075443D /* Assets.xcassets in Resources */,

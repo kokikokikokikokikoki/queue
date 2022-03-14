@@ -70,7 +70,8 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func onBranchTap() {
-        guard let branch = storyboard?.instantiateViewController(withIdentifier: "QueueViewController")as? QueueViewController else{
+        let queueStoryboard = UIStoryboard(name: "QueueStoryboard", bundle: nil)
+        guard let branch = queueStoryboard.instantiateViewController(withIdentifier: "QueueViewController")as? QueueViewController else{
             
             return
         }
