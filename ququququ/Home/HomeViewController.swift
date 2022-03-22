@@ -60,12 +60,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onQueueTap() {
-        guard let queue = storyboard?.instantiateViewController(withIdentifier: "BookingViewController")as? BookingViewController else {
+        let mapStoryboard = UIStoryboard(name: "MapStoryboard", bundle: nil)
+        guard let queue = mapStoryboard.instantiateViewController(withIdentifier: "MapViewController")as? MapViewController else {
             return
             
         }
-        present(queue, animated: true)
-              self.navigationController?.pushViewController(queue, animated: true)
+//        present(queue, animated: true)
+              self.navigationController!.pushViewController(queue, animated: true)
     }
     
     

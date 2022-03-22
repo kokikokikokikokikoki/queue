@@ -21,9 +21,9 @@
          content-type: application/json
       body: '[
   {
-    "account": "Open mutual fund accountOpen mutual fund accountOpen mutual fund accountOpen mutual fund account",
+    "account": "Open mutual fund accounts test test test test test test test",
     "branch": "CIMB BANK: Bangbon Branch",
-    "process": "Waiting",
+    "process": "Waiting waiting waiting waiting waiting",
     "date": "12:45PM"
   },
   {
