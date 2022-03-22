@@ -12,11 +12,11 @@
 import UIKit
 import Foundation
 struct HomeModel : Codable{
-  
+    
     struct Response: Codable {
         var id: Int
         var name: String
-       var sub: String
+        var sub: String
         var t: Int
     }
     

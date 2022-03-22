@@ -1,10 +1,6 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## GoogleMaps
-
-Copyright 2022 Google
-
 ## IQKeyboardManagerSwift
 
 MIT License

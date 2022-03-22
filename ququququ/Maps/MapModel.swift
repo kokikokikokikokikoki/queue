@@ -15,24 +15,9 @@ import Foundation
 
 enum MapModel {
   
-  enum Request {
-    case doSomething(item: Int)
-  }
-  
-  enum Response {
-    case doSomething(newItem: Int, isItem: Bool)
-  }
-  
-  enum ViewModel {
-    case doSomething(viewModelData: NSObject)
-  }
-  
-  enum Route {
-    case dismissMapScene
-    case xScene(xData: Int)
-  }
-  
-  struct DataSource {
-    //var test: Int
+    struct Location: Codable {
+      var latitude: String
+      var longitude: String
+      var location: String
   }
 }

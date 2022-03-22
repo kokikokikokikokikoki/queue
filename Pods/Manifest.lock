@@ -1,24 +1,16 @@
 PODS:
-  - GoogleMaps (6.1.0):
-    - GoogleMaps/Maps (= 6.1.0)
-  - GoogleMaps/Base (6.1.0)
-  - GoogleMaps/Maps (6.1.0):
-    - GoogleMaps/Base
   - IQKeyboardManagerSwift (6.5.9)
 
 DEPENDENCIES:
-  - GoogleMaps
   - IQKeyboardManagerSwift
 
 SPEC REPOS:
   trunk:
-    - GoogleMaps
     - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
-  GoogleMaps: cffc5d24ce920063aaeebe6ac4dbaaca1dd7f377
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
 
-PODFILE CHECKSUM: ab84f76fd83a3cf762469d76c015a4eafe7e8385
+PODFILE CHECKSUM: bff1442fc31a64c529b604470b87bb86040de2be
 
 COCOAPODS: 1.11.2

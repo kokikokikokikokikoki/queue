@@ -14,12 +14,7 @@ import Foundation
 
 
 protocol MapBusinessLogic {
-    
-    func doRequest(_ request: MapModel.Request)
-}
-
-protocol MapDataStore {
-    var dataSource: MapModel.DataSource { get }
+    func fetchLocations()
 }
 
 class MapInteractor {
@@ -29,45 +24,27 @@ class MapInteractor {
     
     init(viewController: MapDisplayLogic?) {
         self.presenter = MapPresenter(viewController: viewController)
-        
-        
-        
     }
+    
+    func fetchLocations() {
+        let url = URL(string: "http://localhost:8882/locations")!
+
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            let model = try! jsonDecoder.decode([MapModel.Location].self, from: data!)
+            self.presenter.displayLocations(locations: model)
+        })
+
+        task.resume()
+    }
+      
 }
 
 
 // MARK: - MapBusinessLogic
 extension MapInteractor: MapBusinessLogic {
     
-    func doRequest(_ request: MapModel.Request) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            
-            switch request {
-                
-            case .doSomething(let item):
-                self.doSomething(item)
-            }
-        }
-    }
 }
-
-
-// MARK: - Private Zone
-private extension MapInteractor {
-    
-    func doSomething(_ item: Int) {
-        
-        //construct the Service right before using it
-        //let serviceX = factory.makeXService()
-        
-        // get new data async or sync
-        //let newData = serviceX.getNewData()
-        
-        presenter.presentResponse(.doSomething(newItem: item + 1, isItem: true))
-    }
-}
-
-
 
 
 

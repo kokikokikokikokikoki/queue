@@ -13,7 +13,7 @@
 import Foundation
 
 protocol MapPresentationLogic {
-  func presentResponse(_ response: MapModel.Response)
+    func displayLocations(locations: [MapModel.Location])
 }
 
 final class MapPresenter {
@@ -27,27 +27,8 @@ final class MapPresenter {
 
 // MARK: - MapPresentationLogic
 extension MapPresenter: MapPresentationLogic {
-  
-  func presentResponse(_ response: MapModel.Response) {
-    
-    switch response {
-      
-    case .doSomething(let newItem, let isItem):
-      presentDoSomething(newItem, isItem)
+    func displayLocations(locations: [MapModel.Location]) {
+        viewController?.displayLocations(locations: locations)
     }
-  }
 }
-
-
-// MARK: - Private Zone
-private extension MapPresenter {
-  
-  func presentDoSomething(_ newItem: Int, _ isItem: Bool) {
-    
-    //prepare data for display and send it further
-    
-    viewController?.displaySomething()
-  }
-}
-
 

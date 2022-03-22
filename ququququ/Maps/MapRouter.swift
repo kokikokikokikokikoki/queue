@@ -14,7 +14,6 @@ import UIKit
 
 protocol MapRouting {
   
-  func routeTo(_ route: MapModel.Route)
 }
 
 final class MapRouter {
@@ -29,19 +28,7 @@ final class MapRouter {
 
 // MARK: - MapRouting
 extension MapRouter: MapRouting {
-  
-  func routeTo(_ route: MapModel.Route) {
-    DispatchQueue.main.async {
-      switch route {
-        
-      case .dismissMapScene:
-        self.dismissMapScene()
-        
-      case .xScene(let data):
-        self.showXSceneBy(data)
-      }
-    }
-  }
+
 }
 
 

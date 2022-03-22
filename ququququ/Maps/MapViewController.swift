@@ -9,93 +9,84 @@
 //  so you can apply clean architecture to your iOS and MacOS projects,
 //  see more http://clean-swift.com
 //
-import GoogleMaps
+//import GoogleMaps
 import UIKit
+import MapKit
+
 
 protocol MapDisplayLogic where Self: UIViewController {
-  
-  func displaySomething()
+    func displayLocations(locations: [MapModel.Location])
 }
 
- class MapViewController: UIViewController {
-  
-  
-     struct Pins{
-         let location : String
-         let long : CLLocationDegrees
-         let lat : CLLocationDegrees
-     }
-     let pins = [
-        Pins(location: "Silom Complex Branch", long: 100.53528567600118, lat: 13.729476664536152 ),
-        Pins(location: "Thanon Langsuan Branch", long: 100.54341459134199, lat: 13.74074314083847),
-        Pins(location: "Bangbon Branch", long: 100.41687830400475, lat: 13.671588976013084),
-        Pins(location: "The Mall Bang Kapi Branch", long: 100.64247465855208, lat: 13.769776945300888),
-        Pins(location: "The Mall Bang Khae Branch", long: 100.40846686681796, lat: 13.715280977378168),
-        Pins(location: "Central Plaza Rama 2", long: 100.43901153966844, lat: 13.664884619213872)
-
-        
-     ]
-     
-  private var interactor: MapBusinessLogic!
-  private var router: MapRouting!
-  
+class MapViewController: UIViewController {
     
-     
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-      interactor = MapInteractor(viewController: self)
-      router = MapRouter(viewController: self)
-      GMSServices.provideAPIKey("AIzaSyBl5QMIWK1wv6KG3DP_dzVHFvbpd9hEu38")
-      
-      let camera = GMSCameraPosition.camera(withLatitude: 13.7563, longitude: 100.5018, zoom: 6.0)
-      let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-      view = mapView
-     
-      
-      for pin in pins {
-          let pin_marker = GMSMarker()
-          pin_marker.position = CLLocationCoordinate2D(latitude: pin.lat, longitude: pin.long )
-          pin_marker.title = pin.location
-          pin_marker.map = mapView
-      }
-//      let marker = GMSMarker()
-//      marker.position = CLLocationCoordinate2D(latitude: 13.740993263460616,longitude: 100.54328587554423)
-//      marker.title = "CIMB MAIN BRANCH"
-//      marker.snippet = "testing"
-//      marker.map = mapView
-//
-  }
-  
-  
-
-
-     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
-     }
-     
-     override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
-     }
-     override func viewDidLayoutSubviews() {
-         super.viewDidLayoutSubviews()
-     }
-     
-     override func viewDidDisappear(_ animated: Bool) {
-         super.viewDidDisappear(animated)
-     }
-     
-     override func viewWillDisappear(_ animated: Bool) {
-         super.viewWillDisappear(animated)
-     }}
+    @IBOutlet weak var map: MKMapView!
+    
+    struct Pins{
+        let location : String
+        let long : CLLocationDegrees
+        let lat : CLLocationDegrees
+    }
+    
+    private var interactor: MapBusinessLogic!
+    private var router: MapRouting!
+    
+    let initialLocation = CLLocation(latitude: 13.729476664536152, longitude: 100.53528567600118)
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor = MapInteractor(viewController: self)
+        router = MapRouter(viewController: self)
+        
+        map.mapType = .standard
+        
+        let location = CLLocationCoordinate2D(latitude: 13.729476664536152,longitude: 100.53528567600118)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let region = MKCoordinateRegion(center: location, span: span)
+        map.setRegion(region, animated: true)
+        
+        interactor.fetchLocations()
+    }
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }}
 
 
 // MARK: - MapDisplayLogic
 extension MapViewController: MapDisplayLogic {
-    func displaySomething() {
-        
+    func displayLocations(locations: [MapModel.Location]) {
+        var annotations: [MKPointAnnotation] = []
+        locations.forEach { location in
+            let annotation = MKPointAnnotation()
+            let centerAnnotation = CLLocationCoordinate2D(latitude: Double(location.latitude) ?? 0, longitude: Double(location.longitude) ?? 0)
+            annotation.coordinate = centerAnnotation
+            annotation.title = location.location
+            annotations.append(annotation)
+        }
+        map.addAnnotations(annotations)
     }
- 
 }
 
 
@@ -105,5 +96,5 @@ extension MapViewController: MapDisplayLogic {
 
 
 
-    
+
 

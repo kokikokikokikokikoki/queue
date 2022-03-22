@@ -8,7 +8,7 @@ target 'ququququ' do
   # Pods for ququququ
 
   pod 'IQKeyboardManagerSwift'
-  pod 'GoogleMaps'
+#  pod 'GoogleMaps'
 
   target 'ququququTests' do
     inherit! :search_paths

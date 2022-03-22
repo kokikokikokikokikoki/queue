@@ -83,7 +83,54 @@
 ]'
 
 
-          
-          
-          
-          
+-  request:
+      method: GET
+      url: /locations
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      body: '[
+    {
+       "location": "Silom Complex Branch",
+       "latitude": "13.729476664536152",
+        "longitude": "100.53528567600118"
+      },
+      {
+       "location": "Thanon Langsuan Branch",
+       "latitude": "13.74074314083847",
+        "longitude": "100.54341459134199"
+      },
+      {
+       "location": "Bangbon Branch",
+       "latitude": "13.671588976013084",
+        "longitude": "100.41687830400475"
+      },
+      {
+       "location": "The Mall Bang Kapi Branch",
+       "latitude": "13.769776945300888",
+        "longitude": "100.64247465855208"
+      },
+      {
+       "location": "The Mall Bang Khae Branch",
+       "latitude": "13.715280977378168",
+        "longitude": " 100.40846686681796"
+      },
+      {
+       "location": "Central Plaza Rama 2",
+       "latitude": "13.664884619213872",
+        "longitude": "100.43901153966844"
+      }
+]'
+
+
+-  request:
+      method: POST
+      url: /queue/create
+   response:
+      status: 200
+      headers:
+         content-type: application/json
+      body: '{
+      "name": "AAAA"
+}'
