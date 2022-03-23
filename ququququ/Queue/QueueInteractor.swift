@@ -12,11 +12,11 @@
 
 import Foundation
 
-//typealias QueueInteractable = QueueBusinessLogic & QueueDataStore
+typealias QueueInteractable = QueueBusinessLogic
 
 protocol QueueBusinessLogic {
-  
-  func doRequest(_ request: QueueModel.Request)
+    func doPostRequest()
+//  func doRequest(_ request: QueueModel.Request)
 }
 //
 //protocol QueueDataStore {
@@ -36,32 +36,51 @@ protocol QueueBusinessLogic {
 
 
 // MARK: - QueueBusinessLogic
-extension QueueInteractor: QueueBusinessLogic {
-  
-  func doRequest(_ request: QueueModel.Request) {
-    DispatchQueue.global(qos: .userInitiated).async {
-      
-      switch request {
+extension QueueInteractor{
+    func doPostRequest(time: String,branch: String, description: String,name: String, completion: @escaping([String: Any]?, Error?)-> Void ){
         
-      case .doSomething(let item):
-        self.doSomething(item)
-      }
+        
+        let url = URL(string: "http://localhost:8882/queue/create")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        //request.setValue("application/json", forHTTPHeaderField: "content-type")
+        
+        let task = URLSession.shared.dataTask(with: request){
+            data,response,error in
+            if let error = error{
+                print("error")}
+            else{
+                let jsonResponse = try? JSONSerialization.jsonObject(with: data!, options: [])
+                
+            }
+        }.resume()
     }
-  }
+    
+//
+//  func doRequest(_ request: QueueModel.Request) {
+//    DispatchQueue.global(qos: .userInitiated).async {
+//
+//      switch request {
+//
+//      case .doSomething(let item):
+//        self.doSomething(item)
+//      }
+//    }
+//  }
 }
 
 
 // MARK: - Private Zone
-private extension QueueInteractor {
-  
-  func doSomething(_ item: Int) {
-    
-    //construct the Service right before using it
-    //let serviceX = factory.makeXService()
-    
-    // get new data async or sync
-    //let newData = serviceX.getNewData()
-    
-    presenter.presentResponse(.doSomething(newItem: item + 1, isItem: true))
-  }
-}
+//private extension QueueInteractor {
+//
+//  func doSomething(_ item: Int) {
+//
+//    //construct the Service right before using it
+//    //let serviceX = factory.makeXService()
+//
+//    // get new data async or sync
+//    //let newData = serviceX.getNewData()
+//
+//    presenter.presentResponse(.doSomething(newItem: item + 1, isItem: true))
+//  }
+//}

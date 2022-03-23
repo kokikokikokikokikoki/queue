@@ -120,6 +120,40 @@
        "location": "Central Plaza Rama 2",
        "latitude": "13.664884619213872",
         "longitude": "100.43901153966844"
+      },
+      {
+       "location": "Central Plaza Bangna",
+       "latitude": "13.671576480527323",
+        "longitude": " 100.63469999859446"
+      },
+      {
+       "location": "Bangrak Branch",
+       "latitude": "13.729104179859595",
+        "longitude": " 100.5155646012735"
+      },{
+       "location": "Central Plaza Eastville",
+       "latitude": "13.811634934189433",
+        "longitude": " 100.61517328528319"
+      },{
+       "location": "Fashion Island Branch",
+       "latitude": "13.833618196648503",
+        "longitude": " 100.6786878681542"
+      },{
+       "location": "Central Rama 9",
+       "latitude": "13.758055048328252",
+        "longitude": " 100.56585748199875"
+      },{
+       "location": "Bangkhen Branch",
+       "latitude": "13.8338461970477",
+        "longitude": " 100.57111109063919"
+      },{
+       "location": "Central Ladphao Branch",
+       "latitude": "13.8161532398133",
+        "longitude": " 100.55996035762236"
+      },{
+       "location": "Central Pinklao",
+       "latitude": "13.781276569577514",
+        "longitude": " 100.47667597087106"
       }
 ]'
 
@@ -132,5 +166,8 @@
       headers:
          content-type: application/json
       body: '{
-      "name": "AAAA"
+      "time": ""
+      "branch": ""
+      "description": ""
+      "name": ""
 }'

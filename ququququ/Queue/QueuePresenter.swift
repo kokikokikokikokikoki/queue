@@ -14,6 +14,7 @@ import Foundation
 
 protocol QueuePresentationLogic {
   func presentResponse(_ response: QueueModel.Response)
+    func PostResponse(_ response: [QueueModel.Booking])
 }
 
 final class QueuePresenter {
@@ -27,26 +28,13 @@ final class QueuePresenter {
 
 // MARK: - QueuePresentationLogic
 extension QueuePresenter: QueuePresentationLogic {
+    func PostResponse(_ response: [QueueModel.Booking]) {
+        
+    }
+    
   
   func presentResponse(_ response: QueueModel.Response) {
-    
-    switch response {
       
-    case .doSomething(let newItem, let isItem):
-      presentDoSomething(newItem, isItem)
-    }
   }
 }
 
-
-// MARK: - Private Zone
-private extension QueuePresenter {
-  
-  func presentDoSomething(_ newItem: Int, _ isItem: Bool) {
-    
-    //prepare data for display and send it further
-    
-   //
-      //viewController?.displayViewModel(.doSomething(viewModelData: NSObject()))
-  }
-}

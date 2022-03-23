@@ -14,10 +14,18 @@
 import Foundation
 
 enum QueueModel {
-  
-  enum Request {
-    case doSomething(item: Int)
-  }
+   
+    struct Booking : Codable{
+        var time: String?
+        var branch: String?
+        var description: String?
+        var name: String?
+        
+    }
+
+//  enum Request {
+//    case doSomething(item: Int)
+//  }
   
   enum Response {
     case doSomething(newItem: Int, isItem: Bool)
