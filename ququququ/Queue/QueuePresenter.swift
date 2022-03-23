@@ -13,28 +13,22 @@
 import Foundation
 
 protocol QueuePresentationLogic {
-  func presentResponse(_ response: QueueModel.Response)
-    func PostResponse(_ response: [QueueModel.Booking])
+    func dismissViewController()
 }
 
 final class QueuePresenter {
-  private weak var viewController: QueueDisplayLogic?
-  
-  init(viewController: QueueDisplayLogic?) {
-    self.viewController = viewController
-  }
+    private weak var viewController: QueueDisplayLogic?
+    
+    init(viewController: QueueDisplayLogic?) {
+        self.viewController = viewController
+    }
 }
 
 
 // MARK: - QueuePresentationLogic
 extension QueuePresenter: QueuePresentationLogic {
-    func PostResponse(_ response: [QueueModel.Booking]) {
-        
+    func dismissViewController() {
+        viewController?.dismissViewController()
     }
-    
-  
-  func presentResponse(_ response: QueueModel.Response) {
-      
-  }
 }
 

@@ -13,7 +13,7 @@
 import UIKit
 
 protocol QueueDisplayLogic where Self: UIViewController {
-    
+    func dismissViewController()
     func displaySomething()
 }
 
@@ -30,18 +30,18 @@ class QueueViewController: UIViewController {
     
     
     func clearBtn(){
-     
+        
         nameField.clearButtonMode = .always
         nameField.clearButtonMode = .whileEditing
     }
-//    func doneBtn(){
-//        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnPressed))
-//        let toolbar = UIToolbar()
-//        toolbar.sizeToFit()
-//        branchField.inputAccessoryView = toolbar
-//        nameField.inputAccessoryView = toolbar
-//        toolbar.items = [doneBtn]
-//    }
+    //    func doneBtn(){
+    //        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnPressed))
+    //        let toolbar = UIToolbar()
+    //        toolbar.sizeToFit()
+    //        branchField.inputAccessoryView = toolbar
+    //        nameField.inputAccessoryView = toolbar
+    //        toolbar.items = [doneBtn]
+    //    }
     
     let branches = ["Bangbon Branch", "The Mall Bang Kapi Branch", "The Mall Bang Khae Branch", "Central Plaza Rama 2", "Central Pinklao Branch", "Central Plaza Bangna Branch", "Silom Complex Branch", "Bangrak Branch", "Central Ladphao Branch", "Bangkhen Branch", "Central Plaza Grand Rama 9 Branch", "Fashion Island Branch", "Central Eastville Branch", "Thanon Langsuan Branch"]
     var pickerViewBranch = UIPickerView()
@@ -55,21 +55,17 @@ class QueueViewController: UIViewController {
         pickerViewBranch.dataSource = self
         branchField.inputView = pickerViewBranch
         
-       datePicker.semanticContentAttribute = .forceRightToLeft
+        datePicker.semanticContentAttribute = .forceRightToLeft
         datePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
         timePicker.semanticContentAttribute = .forceRightToLeft
-         timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
-        
-        //doneBtn()
+        timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
         clearBtn()
-    
     }
-//    @objc func doneBtnPressed(){
-//        let select = branches[pickerViewBranch.selectedRow(inComponent: 0)]
-//        branchField.text = select
-//        self.view.endEditing(true)
-//    }
-//
+    
+    @IBAction func onClickBooking(_ sender: Any) {
+        interactor.doPostRequest(date: datePicker.date, time: timePicker.date, branch: branchField.text ?? "", name: nameField.text ?? "", description: descField.text ?? "")
+    }
+    
 }
 
 extension QueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -96,5 +92,11 @@ extension QueueViewController: QueueDisplayLogic {
     
     func displaySomething() {
         
+    }
+    
+    func dismissViewController() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

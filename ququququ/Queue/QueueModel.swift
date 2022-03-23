@@ -16,7 +16,8 @@ import Foundation
 enum QueueModel {
    
     struct Booking : Codable{
-        var time: String?
+        var date: Date?
+        var time: Date?
         var branch: String?
         var description: String?
         var name: String?

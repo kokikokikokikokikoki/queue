@@ -165,9 +165,4 @@
       status: 200
       headers:
          content-type: application/json
-      body: '{
-      "time": ""
-      "branch": ""
-      "description": ""
-      "name": ""
-}'
+      body: '{"status": "Booking queue successfully" }'
