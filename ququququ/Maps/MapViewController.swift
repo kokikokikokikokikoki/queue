@@ -33,15 +33,17 @@ class MapViewController: UIViewController {
     
     let initialLocation = CLLocation(latitude: 13.729476664536152, longitude: 100.53528567600118)
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor = MapInteractor(viewController: self)
         router = MapRouter(viewController: self)
+       // mapView.delegate = self
+        map.delegate = self
         
         map.mapType = .standard
-        
+      
         let location = CLLocationCoordinate2D(latitude: 13.729476664536152,longitude: 100.53528567600118)
         
         let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
@@ -51,7 +53,12 @@ class MapViewController: UIViewController {
         interactor.fetchLocations()
     }
     
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//           if segue.identifier == "QueueStoryboard" {
+//               let userViewController = segue.destination as! MapViewController
+//               // TODO: something
+//           }
+//       }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,8 +96,29 @@ extension MapViewController: MapDisplayLogic {
     }
 }
 
+extension MapViewController: MKMapViewDelegate{
 
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+         print("calloutAccessoryControlTapped")
+      }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+       // guard let annotation = view.annotation as? MapModel.Location else { return }
+       
+        let storyboard: UIStoryboard = UIStoryboard(name: "QueueStoryboard", bundle: nil)
+        let book = storyboard.instantiateViewController(withIdentifier: "QueueViewController") as! QueueViewController
+        book.selectedBranch = (view.annotation?.title ?? "") ?? ""
+        navigationController?.pushViewController(book, animated: true)
+        
 
+    }
+}
+//extension MapViewController: MKMapViewDelegate {
+//
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        performSegue(withIdentifier: "QueueStoryboard", sender: nil)
+//    }
+//}
 
 
 

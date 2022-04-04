@@ -27,7 +27,7 @@ class QueueViewController: UIViewController {
     private var interactor: QueueBusinessLogic!
     private var router: QueueRouting!
     
-    
+    var selectedBranch: String = ""
     
     func clearBtn(){
         
@@ -60,12 +60,22 @@ class QueueViewController: UIViewController {
         timePicker.semanticContentAttribute = .forceRightToLeft
         timePicker.subviews.first?.semanticContentAttribute = .forceRightToLeft
         clearBtn()
+        checkMap()
+        print("select branch", selectedBranch)
     }
     
     @IBAction func onClickBooking(_ sender: Any) {
         interactor.doPostRequest(date: datePicker.date, time: timePicker.date, branch: branchField.text ?? "", name: nameField.text ?? "", description: descField.text ?? "")
     }
-    
+    func checkMap(){
+        if selectedBranch.isEmpty{
+            branchField.text = branchField.text
+            
+        } else{
+            branchField.text = selectedBranch
+            
+        }
+    }
 }
 
 extension QueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -77,6 +87,7 @@ extension QueueViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         branchField.text = branches[row]
+        
         //branchField.resignFirstResponder()
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -96,7 +107,7 @@ extension QueueViewController: QueueDisplayLogic {
     
     func dismissViewController() {
         DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }
