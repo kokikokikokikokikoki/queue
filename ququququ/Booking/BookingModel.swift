@@ -14,25 +14,25 @@
 import Foundation
 
 enum BookingModel {
-  
-  enum Request {
-    case doSomething(item: Int)
-  }
-  
-  enum Response {
-    case doSomething(newItem: Int, isItem: Bool)
-  }
-  
-  enum ViewModel {
-    case doSomething(viewModelData: NSObject)
-  }
-  
-  enum Route {
-    case dismissBookingScene
-    case xScene(xData: Int)
-  }
-  
-  struct DataSource {
-    //var test: Int
-  }
+    
+    enum Request {
+        case doSomething(item: Int)
+    }
+    
+    enum Response {
+        case doSomething(newItem: Int, isItem: Bool)
+    }
+    
+    enum ViewModel {
+        case doSomething(viewModelData: NSObject)
+    }
+    
+    enum Route {
+        case dismissBookingScene
+        case xScene(xData: Int)
+    }
+    
+    struct DataSource {
+        //var test: Int
+    }
 }

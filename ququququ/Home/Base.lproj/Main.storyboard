@@ -40,6 +40,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOl-JM-xYW">
                                 <rect key="frame" x="270" y="175" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="branchID"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="iKR-PV-Ipe"/>
                                     <constraint firstAttribute="width" constant="60" id="r66-3v-j7G"/>
@@ -56,6 +57,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-iA-zmW">
                                 <rect key="frame" x="338" y="175" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="MapID"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Npp-SC-xBY"/>
                                     <constraint firstAttribute="height" constant="60" id="pKf-Ej-sfY"/>

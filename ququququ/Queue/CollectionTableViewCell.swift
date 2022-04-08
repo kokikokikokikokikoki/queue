@@ -11,19 +11,18 @@ class CollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     
     static let identifier = "CollectionTableViewCell"
-  
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
         collectionView.register(TileCollectionViewCell.self, forCellWithReuseIdentifier: TileCollectionViewCell.identifier)
         collectionView.backgroundColor = .systemBackground
         
         return collectionView
-}()
-
+    }()
+    
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -50,8 +49,8 @@ class CollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TileCollectionViewCell.identifier, for: indexPath)as? TileCollectionViewCell else
-       {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TileCollectionViewCell.identifier, for: indexPath)as? TileCollectionViewCell else
+        {
             fatalError()
         }
         return cell
@@ -62,15 +61,15 @@ class CollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-//
+    //    override func awakeFromNib() {
+    //        super.awakeFromNib()
+    //        // Initialization code
+    //    }
+    
+    //    override func setSelected(_ selected: Bool, animated: Bool) {
+    //        super.setSelected(selected, animated: animated)
+    //
+    //        // Configure the view for the selected state
+    //    }
+    //
 }

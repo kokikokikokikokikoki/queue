@@ -14,7 +14,7 @@
 import Foundation
 
 enum QueueModel {
-   
+    
     struct Booking : Codable{
         var date: Date?
         var time: Date?
@@ -23,25 +23,23 @@ enum QueueModel {
         var name: String?
         
     }
-
-//  enum Request {
-//    case doSomething(item: Int)
-//  }
-  
-  enum Response {
-    case doSomething(newItem: Int, isItem: Bool)
-  }
-  
-  enum ViewModel {
-    case doSomething(viewModelData: NSObject)
-  }
-  
-  enum Route {
-    case dismissQueueScene
-    case xScene(xData: Int)
-  }
-  
-  struct DataSource {
-    //var test: Int
-  }
+    
+    
+    
+    enum Response {
+        case doSomething(newItem: Int, isItem: Bool)
+    }
+    
+    enum ViewModel {
+        case doSomething(viewModelData: NSObject)
+    }
+    
+    enum Route {
+        case dismissQueueScene
+        case xScene(xData: Int)
+    }
+    
+    struct DataSource {
+        //var test: Int
+    }
 }

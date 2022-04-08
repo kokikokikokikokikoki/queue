@@ -27,6 +27,7 @@ class QueueInteractor: QueueBusinessLogic {
         // self.dataSource = dataSource
         self.presenter = QueuePresenter(viewController: viewController)
     }
+    //post request
     
     func doPostRequest(date: Date, time: Date, branch: String, name: String, description: String) {
         let url = URL(string: "http://localhost:8882/queue/create")!
@@ -45,7 +46,7 @@ class QueueInteractor: QueueBusinessLogic {
             }
         }.resume()
     }
-    
+    //create body
     func generateQueueRequest(date: Date, time: Date, branch: String, name: String, description: String) -> Data? {
         let queue = QueueModel.Booking(date: date, time: time, branch: branch, description: description, name: name)
         let encoder = JSONEncoder()

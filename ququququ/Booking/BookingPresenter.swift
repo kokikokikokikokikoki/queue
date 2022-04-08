@@ -13,36 +13,36 @@
 import Foundation
 
 protocol BookingPresentationLogic {
-  func presentResponse(_ response: BookingModel.Response)
+    func presentResponse(_ response: BookingModel.Response)
 }
 
 final class BookingPresenter {
-  private weak var viewController: BookingDisplayLogic?
-  
-  init(viewController: BookingDisplayLogic?) {
-    self.viewController = viewController
-  }
+    private weak var viewController: BookingDisplayLogic?
+    
+    init(viewController: BookingDisplayLogic?) {
+        self.viewController = viewController
+    }
 }
 
 
 // MARK: - BookingPresentationLogic
 extension BookingPresenter: BookingPresentationLogic {
-  
-  func presentResponse(_ response: BookingModel.Response) {
     
-    switch response {
-      
-    case .doSomething(let newItem, let isItem):
-      presentDoSomething(newItem, isItem)
+    func presentResponse(_ response: BookingModel.Response) {
+        
+        switch response {
+            
+        case .doSomething(let newItem, let isItem):
+            presentDoSomething(newItem, isItem)
+        }
     }
-  }
 }
 
 
 // MARK: - Private Zone
 private extension BookingPresenter {
-  
-  func presentDoSomething(_ newItem: Int, _ isItem: Bool) {
-      viewController?.displaySomething()
-  }
+    
+    func presentDoSomething(_ newItem: Int, _ isItem: Bool) {
+        viewController?.displaySomething()
+    }
 }

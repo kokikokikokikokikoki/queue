@@ -18,10 +18,11 @@ protocol QueueDisplayLogic where Self: UIViewController {
 }
 
 class QueueViewController: UIViewController {
+   //connect with our UI
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var branchField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var timePicker: UIDatePicker!
     private var interactor: QueueBusinessLogic!
@@ -34,14 +35,7 @@ class QueueViewController: UIViewController {
         nameField.clearButtonMode = .always
         nameField.clearButtonMode = .whileEditing
     }
-    //    func doneBtn(){
-    //        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnPressed))
-    //        let toolbar = UIToolbar()
-    //        toolbar.sizeToFit()
-    //        branchField.inputAccessoryView = toolbar
-    //        nameField.inputAccessoryView = toolbar
-    //        toolbar.items = [doneBtn]
-    //    }
+   
     
     let branches = ["Bangbon Branch", "The Mall Bang Kapi Branch", "The Mall Bang Khae Branch", "Central Plaza Rama 2", "Central Pinklao Branch", "Central Plaza Bangna Branch", "Silom Complex Branch", "Bangrak Branch", "Central Ladphao Branch", "Bangkhen Branch", "Central Plaza Grand Rama 9 Branch", "Fashion Island Branch", "Central Eastville Branch", "Thanon Langsuan Branch"]
     var pickerViewBranch = UIPickerView()
@@ -66,6 +60,7 @@ class QueueViewController: UIViewController {
     
     @IBAction func onClickBooking(_ sender: Any) {
         interactor.doPostRequest(date: datePicker.date, time: timePicker.date, branch: branchField.text ?? "", name: nameField.text ?? "", description: descField.text ?? "")
+        print("success")
     }
     func checkMap(){
         if selectedBranch.isEmpty{

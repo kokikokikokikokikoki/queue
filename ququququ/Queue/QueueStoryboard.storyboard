@@ -95,6 +95,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rx8-eM-5di">
                                                         <rect key="frame" x="16" y="36.5" width="382" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="branchInputID"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -120,6 +121,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-Od-54n">
                                                         <rect key="frame" x="16" y="36.5" width="382" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="nameInputID"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
@@ -145,6 +147,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hC-4z-YyN">
                                                         <rect key="frame" x="16" y="36.5" width="382" height="34"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="descriptionInputID"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
